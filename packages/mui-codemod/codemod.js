@@ -88,23 +88,7 @@ async function runJscodeshiftTransform(transform, files, flags, codemodFlags) {
   }
 }
 
-const parseCssFilePaths = async (files) => {
-  const cssFiles = await Promise.all(
-    files.map(async (filePath) => {
-      const stat = await fs.stat(filePath);
-      if (stat.isDirectory()) {
-        return `${filePath}/**/*.css`;
-      }
-      if (filePath.endsWith('.css')) {
-        return filePath;
-      }
-
-      return null;
-    }),
-  );
-
-  return cssFiles.filter(Boolean);
-};
+//del
 
 async function runPostcssTransform(transform, files) {
   // local postcss plugins are loaded through config files https://github.com/postcss/postcss-load-config/issues/17#issuecomment-253125559
