@@ -68,7 +68,7 @@ export default function getBabelConfig(api) {
     ]);
   }
   const basePlugins = (baseConfig.plugins || []).filter(
-    (/** @type {[unknown, unknown, string]} */ [, , pluginName]) =>
+    ([, , pluginName]) =>
       pluginName !== '@mui/internal-babel-plugin-display-name',
   );
   basePlugins.push(...plugins);
